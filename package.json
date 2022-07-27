@@ -1,0 +1,30 @@
+{
+  "name": "fup-curry-limit-reverse-core",
+  "version": "1.0.0",
+  "description": "function",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "uglifyjs ./source.js -cmo ./index.js",
+    "upload": "npm run build & npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dasx10/fup-curry-limit-reverse-core.git"
+  },
+  "keywords": [
+    "function"
+  ],
+  "author": "Kleschev Yevhenii <dasx10@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dasx10/fup-curry-limit-reverse-core/issues"
+  },
+  "homepage": "https://github.com/dasx10/fup-curry-limit-reverse-core#readme",
+  "dependencies": {
+    "fup-curry-limit-result-type": "^1.0.0",
+    "fup-tuple-consistent-type": "^1.0.1",
+    "fup-tuple-gain-type": "^1.0.0",
+    "fup-tuple-reverse-type": "^1.0.0"
+  }
+}
