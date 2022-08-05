@@ -5,9 +5,10 @@ import type CurryLimitResultType from 'fup-curry-limit-result-type';
 
 export type CurryLimitReverseCore<
     ExpectedParameters extends readonly unknown[] = unknown[],
-    ExpectedResult     extends unknown = unknown
+    ExpectedResult     extends unknown = unknown,
+    ExpectedLimit      extends number  = number,
 > = <
-  Limit       extends number,
+  Limit       extends ExpectedLimit,
   Parameters  extends ExpectedParameters,
   Result      extends ExpectedResult,
   Arguments   extends TupleConsistentType<TupleGainType<Limit, TupleReverseType<Parameters>>>
@@ -20,7 +21,7 @@ export type CurryLimitReverseCore<
 
 /**
  * @example
- * const sum    = (...nums) => nums
+ * const sum    = (...numbers) => numbers
  *   .reduce((added, num) => added + num, 0); 
  * const sum2   = curryLimitReverseCore(2, sum); // (y, x) => y + x | y => x => y + x
  * const add1   = sum2(1);                       // (x) => 1 + x
